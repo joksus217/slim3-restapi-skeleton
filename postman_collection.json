@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "96441bf4-a7fd-c190-84ac-3b6a182d3ef7",
+		"name": "Docoblast",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Subscriber (addContact)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjM2MTU4MTYsIm5iZiI6MTUyMzYxMjIxNiwiaWQiOiIxMiIsImlzcyI6ImFwaS1iZXRhLmRvY29ibGFzdC5jb20iLCJhdWQiOiIxOTIuMTY4LjIuMjUzIn0.2Z61CKxnpLC-2OSO8a5RJr857CTZhDj8g-5pU6oZbjM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"data\":{\r\n    \"id_list_name\":\"275\",\r\n    \"contact\" : [\r\n    \t{\r\n\t        \"emailaddress\":\"joko@docotel.com\",\r\n\t        \"format\":\"h\",\r\n\t        \"confirmed\":\"1\",\r\n\t        \"custom_field\" : {\r\n\t            \"first_name\":\"John\",\r\n\t            \"last_name\":\"Doe\",\r\n\t            \"attachment\": [\r\n\t            \t\t\"http://www.pdf995.com/samples/pdf.pdf\",\r\n\t            \t\t\"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf\"\r\n\t            \t]\r\n        \t}\r\n    \t},\r\n    \t{\r\n\t        \"emailaddress\":\"joksus217@gmail.com\",\r\n\t        \"format\":\"h\",\r\n\t        \"confirmed\":\"1\",\r\n\t        \"custom_field\" : {\r\n\t            \"first_name\":\"Jane\",\r\n\t            \"last_name\":\"Dane\",\r\n\t            \"attachment\": \"http://gahp.net/wp-content/uploads/2017/09/sample.pdf\"\r\n        \t}\r\n    \t}\r\n    ]\r\n    \r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/addContact",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"addContact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Contact List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjM2MTgyODksIm5iZiI6MTUyMzYxNDY4OSwiaWQiOiIxMiIsImlzcyI6ImFwaS1iZXRhLmRvY29ibGFzdC5jb20iLCJhdWQiOiIzNi44MC4yNDUuMjIyIn0.rO74Fv2K4NQrEFDdZRqYesKMWpbZTpHUvgAgnHWT9g8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"data\":{\r\n\t\"name\":\"Lorem Ipsum\",\r\n\t\"owner_name\": \"Lorem Ipsum Owner\",\r\n\t\"owner_email\":\"lorem@ipsum.com\",\r\n\t\"reply_to_email\":\"dolor@sit.amet\",\r\n\t\"bounce_email\": \"lorem.dolor@sit.amet\",\r\n\t\"notify_owner\": \"0\",\r\n\t\"custom_field\" : \"\",\r\n\t\"visible_field\":\"emailaddress,subscribedate,first_name\",\r\n\t\"company_name\": \"PT Lorem Ipsum\",\r\n\t\"company_address\": \"Sit Amet Street\",\r\n\t\"company_phone\": \"213124453424\"\r\n\t}\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/addContactList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"addContactList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Email Campaign",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjM5NTE5OTQsIm5iZiI6MTUyMzk0ODM5NCwiaWQiOiIxNCIsImlzcyI6ImFwaS1iZXRhLmRvY29ibGFzdC5jb20iLCJhdWQiOiIxODAuMjU0LjgwLjEyMSJ9.ez2L2Caus9N8WCppsoFogS_6TDuodII43pcLDTAGkhQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"data\":{\r\n\t\t\"id_list_contact\":\"295\",\r\n\t\t\"id_email_campaign\":8196,\r\n\t\t\"send_from_this_name\":\"Docotel Testing ke -8\",\r\n\t    \"send_from_this_email_address\":\"testingeopis@gmail.com\",\r\n\t    \"send_reply_emails_to\":\"testingeopis@gmail.com\",\r\n\t    \"send_bounced_emails_to\":\"testingeopis@gmail.com\",\r\n\t    \"my_first_name_custom_field_is\":\"\",\r\n\t    \"my_last_name_custom_field_is\":\"\",\r\n\t    \"send_your_email_as_multipart\":\"\",\r\n\t    \"track_open_rates_for_html_emails\":\"\",\r\n\t    \"embed_images_clicked_in_this_email\":\"no\"\r\n\t}\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/sendCampaign",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"sendCampaign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Basic",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "test_billing",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{base_url}}/v1/auth",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MjIxMTI5OTgsIm5iZiI6ImFiYyIsImlkIjoiMSJ9.lT22vtQQu8dnfhgvF4gb5wXyZYMoUaXBtg4guAA-a74",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{base_url}}/v1/getList",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"getList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Single Email",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Mjc1Mzg5NjgsIm5iZiI6MTUyMzkzODk2OCwiaWQiOiIxMCIsImlzcyI6ImFwaS5kb2NvYmxhc3QubG9jYWwiLCJhdWQiOiIxMC4wLjIuMiJ9.jzqbY5_SZwcgLRhHA6fapwHODIvjsodml9DtIx-RWgg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\" : {\n\t\t\t\"to_email\" : \"joko@docotel.com\",\n\t\t\t\"from_name\" : \"No Reply\",\n\t\t\t\"from_email\" : \"test@docotel.com\",\n\t\t\t\"reply_to\" : \"noreply@docotel.com\",\n\t\t\t\"subject\" : \"Lorem Ipsum\",\n\t\t\t\"body\" : \"<html><body>Hello World<body/><html/>\",\n\t\t\t\"attachment\" : \"http://unec.edu.az/application/uploads/2014/12/pdf-sample.pdf\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/sendEmail",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"sendEmail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
